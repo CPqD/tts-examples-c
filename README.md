@@ -30,6 +30,8 @@ Para criar os projetos via linha de comando:
 
 	# cmake -Bbuild -H.
 	
+	# cmake -Bbuild -H.
+
 4. Os projetos gerados estarão disponíveis na pasta build.
 
 
