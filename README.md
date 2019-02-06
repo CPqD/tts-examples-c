@@ -35,8 +35,8 @@ Para criar os projetos:
 1. Acesse o diretório source do repositório baixado;
 2. Abra o programa CMake;
 3. Insira as opções:
-   **Source code:** caminho da pasta source que possui o arquivo CMakeLists.txt
-   **Build the binaries:** caminho onde serão gerados os arquivos de build. Normalmente acrescentamos o diretório build no caminho do source code. Exemplo:/source/build
+    - **Source code**: caminho da pasta source que possui o arquivo CMakeLists.txt
+    - **Build the binaries**: caminho onde serão gerados os arquivos de build. Normalmente acrescentamos o diretório build no caminho do source code. Exemplo:/source/build
 4. Clique em **Configure** e escolha o compilador Visual Studio versão 64 bits;
 5. Clique em **Generate** para que as configurações sejam setadas no compilador;
 6. A solution ``examples.sln`` e os projetos ``example_tts`` e ``example_tts_streaming`` estarão disponíveis na pasta build.
@@ -52,12 +52,13 @@ Para compilar o projeto criado:
 
 Com os exectutáveis ``example_tts.exe`` e ``example_tts_streaming.exe`` gerados, você pode testar o funcionamento da biblioteca do **CPqD Texto Fala** da seguinte maneira:
 1. Rode o programa exemplo informando o caminho da instalação da biblioteca do CPqD Texto Fala:
+       
        # example_tts.exe <caminho da instalação da biblioteca do CPqD Texto Fala>
        # example_tts_streaming.exe <caminho da instalação da biblioteca do CPqD Texto Fala>
 2. Ambos os exemplos irão gerar um arquivo example.wav contendo o texto sintetizado;
 3. Opcionalmente o texto a ser sintetizado pode ser informado via arquivo (example.txt). Caso o arquivo não seja encontrado, um texto padrão será sintetizado.
 
-Maiores dúvidas, veja a documentação de instalação e teste em: https://speechweb.cpqd.com.br/tts/docs/latest/InstallationGuide/Installation/Install.html
+Maiores dúvidas, veja a documentação de [instalação](https://speechweb.cpqd.com.br/tts/docs/latest/InstallationGuide/Installation/Install.html)
 
 
 
@@ -68,7 +69,7 @@ Baixe o conteúdo do repositório em seu computador e crie um *branch* local apo
 	# git clone https://github.com/CPqD/tts-examples-c.git
 	# git checkout -B v4.3-V1 tags/v4.3-V1
 
-Para facilitar a criação dos projetos, o programa CMake (https://cmake.org/) pode ser utilizado via linha de comando.
+Para facilitar a criação dos projetos, o programa [CMake](https://cmake.org/) pode ser utilizado via linha de comando.
 
 Os projetos serão criados de acordo com o tipo de compilador instalado na máquina.
 
@@ -86,23 +87,25 @@ Para criar os projetos:
 Para compilar o projeto criado:
 1. Acesse a pasta build;
 2. Rode os comandos:
-         #make example_tts 
-         #make example_tts_streaming
+
+       # make example_tts 
+       # make example_tts_streaming
  
 3. Os executáveis (**example_tts** e **example_tts_streaming**) foram gerados na pasta build.
 
 
 Com os exectutáveis ``example_tts`` e ``example_tts_streaming`` gerados, você pode testar o funcionamento da biblioteca do **CPqD Texto Fala** da seguinte maneira:
 1. Rode o programa exemplo informando o caminho da instalação da biblioteca do CPqD Texto Fala:
+       
        # ./example_tts <caminho da instalação da biblioteca do CPqD Texto Fala>
        # ./example_tts_streaming <caminho da instalação da biblioteca do CPqD Texto Fala>
 2. Ambos os exemplos irão gerar um arquivo example.wav contendo o texto sintetizado;
 3. Opcionalmente o texto a ser sintetizado pode ser informado via arquivo (example.txt). Caso o arquivo não seja encontrado, um texto padrão será sintetizado.
 
-Maiores dúvidas, veja a documentação de [instalação]: https://speechweb.cpqd.com.br/tts/docs/latest/InstallationGuide/Installation/Install.html
+Maiores dúvidas, veja a documentação de [instalação.](https://speechweb.cpqd.com.br/tts/docs/latest/InstallationGuide/Installation/Install.html)
 
 
 
 ## Documentação
 
-Veja a documentação de como utilizar o **CPqD Texto Fala** em uma [aplicação C]: https://speechweb.cpqd.com.br/tts/docs/latest/ProgrammingGuide/Native/Index.html
+Veja a documentação de como utilizar o **CPqD Texto Fala** em uma [aplicação C.](https://speechweb.cpqd.com.br/tts/docs/latest/ProgrammingGuide/Native/Index.html)
