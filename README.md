@@ -2,10 +2,17 @@
 
 **VERSÃO DE DESENVOLVIMENTO**
 
-O **CPqD Texto Fala** é um *framework* que permite converter texto genérico, como notícias ou diálogos, em fala. É possível integrar o CPqD Texto Fala nas mais variadas aplicações, desde aplicativos móveis até sistemas de diálogo para telefonia. 
+O **CPqD Texto Fala** é um *framework* que permite converter texto genérico, como notícias ou diálogos, em fala. É possível integrar o CPqD Texto Fala nas mais variadas aplicações, desde aplicativos móveis até sistemas de diálogo para telefonia.
 
-Este repositório possui um arquivo CMake contendo dois projetos, na linguagem C, que demonstram como utilizar a biblioteca dinâmica (Windows ou GNU/Linux) do **CPqD Texto Fala**: ``example_tts`` e ``example_tts_streaming``. 
-O projeto ``example_tts`` contém o código fonte de um programa exemplo, utilizando uma síntese síncrona, cujo o áudio é disponibilizado apenas no final do processamento. Já o projeto ``example_tts_streaming`` contém o código fonte de um programa exemplo utilizando uma síntese via streaming.
+Este repositório possui um arquivo CMake contendo dois projetos de programa exemplo, na linguagem C, que demonstram como utilizar a biblioteca dinâmica (Windows ou GNU/Linux) do **CPqD Texto Fala**. Você pode utilizar esses programas como ponto de partida para o desenvolvimento de suas aplicações.
+
+Note que os programas de exemplo aqui apresentados não tem o objetivo de exercitar todos os recursos oferecidos pelo produto.
+
+Os seguintes projetos estão disponíveis:
+
+example_tts: executa uma síntese síncrona utilizando a instalação do CPqD Texto Fala e o texto de entrada especificados. Uma síntese síncrona é aquela cujo o áudio é disponibilizado apenas no final do processamento (i.e. depois da chamada da função **TTS_TextToSpeech()**).
+
+example_tts_streaming: executa uam síntese via streaming utilizando uma instalação do CPqD Texto Fala e o texto de entrada especificados. Uma síntese via streaming entrega o áudio na medida em que a fala é sintetizada, acelerando o tempo de resposta da aplicação. Essa funcionalidade é implementada pela função **TTS_TextToSpeechStream()**.
 
 
 ## Releases
@@ -13,17 +20,59 @@ O projeto ``example_tts`` contém o código fonte de um programa exemplo, utiliz
 Como boa prática, deve-se fazer o uso de versões estáveis, presentes em: https://github.com/CPqD/tts-examples-c/releases
 
 
-## Criação dos projetos
+## Compilação e execução no Windows
 
 Baixe o conteúdo do repositório em seu computador e crie um *branch* local apontando para a *tag* **v4.3-V1**:
 
 	# git clone https://github.com/CPqD/tts-examples-c.git
 	# git checkout -B v4.3-V1 tags/v4.3-V1
 
-Para facilitar a criação dos projetos, o programa CMake (https://cmake.org/) pode ser utilizado (via interface gráfica ou via linha de comando).
+Para facilitar a criação dos projetos, o programa CMake (https://cmake.org/) pode ser utilizado via interface gráfica.
+
+Os projetos serão criados de acordo com o tipo de compilador instalado na máquina. Os comandos aqui propostos estão sendo guiados pelo compilador Visual Studio.
+
+Para criar os projetos:
+1. Acesse o diretório source do repositório baixado;
+2. Abra o programa CMake;
+3. Insira as opções:
+   **Source code:** caminho da pasta source que possui o arquivo CMakeLists.txt
+   **Build the binaries:** caminho onde serão gerados os arquivos de build. Normalmente acrescentamos o diretório build no caminho do source code. Exemplo:/source/build
+4. Clique em **Configure** e escolha o compilador Visual Studio versão 64 bits;
+5. Clique em **Generate** para que as configurações sejam setadas no compilador;
+6. A solution ``examples.sln`` e os projetos ``example_tts`` e ``example_tts_streaming`` estarão disponíveis na pasta build.
+
+
+Para compilar o projeto criado:
+1. Abra solution ``examples.sln``;
+2. Altere a configuração para Release;
+3. Clique com o botão direito no projeto ``example_tts`` na opção **Build**;
+4. Clique com o botão direito no projeto ``example_tts_streaming`` na opção **Build**;
+5. Os executáveis (**example_tts.exe** e **example_tts_streaming.exe**) foram gerados na pasta Release.
+
+
+Com os exectutáveis ``example_tts.exe`` e ``example_tts_streaming.exe`` gerados, você pode testar o funcionamento da biblioteca do **CPqD Texto Fala** da seguinte maneira:
+1. Rode o programa exemplo informando o caminho da instalação da biblioteca do CPqD Texto Fala:
+       # example_tts.exe <caminho da instalação da biblioteca do CPqD Texto Fala>
+       # example_tts_streaming.exe <caminho da instalação da biblioteca do CPqD Texto Fala>
+2. Ambos os exemplos irão gerar um arquivo example.wav contendo o texto sintetizado;
+3. Opcionalmente o texto a ser sintetizado pode ser informado via arquivo (example.txt). Caso o arquivo não seja encontrado, um texto padrão será sintetizado.
+
+Maiores dúvidas, veja a documentação de instalação e teste em: https://speechweb.cpqd.com.br/tts/docs/latest/InstallationGuide/Installation/Install.html
+
+
+
+## Compilação e execução no Linux
+
+Baixe o conteúdo do repositório em seu computador e crie um *branch* local apontando para a *tag* **v4.3-V1**:
+
+	# git clone https://github.com/CPqD/tts-examples-c.git
+	# git checkout -B v4.3-V1 tags/v4.3-V1
+
+Para facilitar a criação dos projetos, o programa CMake (https://cmake.org/) pode ser utilizado via linha de comando.
+
 Os projetos serão criados de acordo com o tipo de compilador instalado na máquina.
 
-Para criar os projetos via linha de comando:
+Para criar os projetos:
 1. Acesse o diretório source do repositório baixado;
 2. Crie a pasta build;
 3. Use o comando abaixo para criar e configurar os projetos:
@@ -33,42 +82,27 @@ Para criar os projetos via linha de comando:
 4. Os projetos gerados estarão disponíveis na pasta build.
 
 
-Para criar os projetos via interface gráfica:
-1. Acesse o diretório source do repositório baixado;
-2. Abra o programa CMake;
-3. Insira as opções:
+
+Para compilar o projeto criado:
+1. Acesse a pasta build;
+2. Rode os comandos:
+         #make example_tts 
+         #make example_tts_streaming
  
-       # Source code: caminho da pasta source que possui o arquivo CMakeLists.txt
-       # Build the binaries: caminho onde serão gerados os arquivos de build. Normalmente acrescentamos o diretório build no caminho do source code. Exemplo:/source/build
-	
-4. Clique em Configure para escolher o tipo de compilador desejado;
-5. Clique em Generate para que as configurações sejam setadas no compilador;
-6. Os projetos gerados estarão disponíveis na pasta build.
+3. Os executáveis (**example_tts** e **example_tts_streaming**) foram gerados na pasta build.
 
 
-Caso não deseje criar e compilar os projetos, utilize os executáveis gerados para Windows e Linux 64 bits contidos na pasta bin.
+Com os exectutáveis ``example_tts`` e ``example_tts_streaming`` gerados, você pode testar o funcionamento da biblioteca do **CPqD Texto Fala** da seguinte maneira:
+1. Rode o programa exemplo informando o caminho da instalação da biblioteca do CPqD Texto Fala:
+       # ./example_tts <caminho da instalação da biblioteca do CPqD Texto Fala>
+       # ./example_tts_streaming <caminho da instalação da biblioteca do CPqD Texto Fala>
+2. Ambos os exemplos irão gerar um arquivo example.wav contendo o texto sintetizado;
+3. Opcionalmente o texto a ser sintetizado pode ser informado via arquivo (example.txt). Caso o arquivo não seja encontrado, um texto padrão será sintetizado.
 
+Maiores dúvidas, veja a documentação de [instalação]: https://speechweb.cpqd.com.br/tts/docs/latest/InstallationGuide/Installation/Install.html
 
-## Execução
-
-Com os exectutáveis ``example_tts`` e ``example_tts_streaming`` gerados (ou copiados), você pode testar o funcionamento da biblioteca do CPqD Texto Fala da seguinte maneira:
-1. Copie o arquivo example.txt contido no repositório para a mesma pasta dos executáveis;
-2. Rode o exemplo utilizando a seguinte linha de comando:
-
-       # <executável example_tts> <caminho da instalação da biblioteca do CPqD Texto Fala>
-       # <executável example_tts_streaming> <caminho da instalação da biblioteca do CPqD Texto Fala>
-
-Ambos os exemplos irão gerar um arquivo example.wav contendo o texto do arquivo example.txt sintetizado.
-
-Maiores dúvidas, veja a documentação de instalação e teste em: https://speechweb.cpqd.com.br/tts/docs/latest/InstallationGuide/Installation/Install.html
 
 
 ## Documentação
 
-A documentação de como utilizar o **CPqD Texto Fala** em uma aplicação C está disponível em: https://speechweb.cpqd.com.br/tts/docs/latest
-
-
-
-
-
-
+Veja a documentação de como utilizar o **CPqD Texto Fala** em uma [aplicação C]: https://speechweb.cpqd.com.br/tts/docs/latest/ProgrammingGuide/Native/Index.html
