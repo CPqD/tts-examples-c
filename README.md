@@ -17,7 +17,7 @@ example_tts_streaming: executa uam síntese via streaming utilizando uma instala
 
 ## Releases
 
-Como boa prática, deve-se fazer o uso de versões estáveis, presentes em: https://github.com/CPqD/tts-examples-c/releases
+Como boa prática, deve-se fazer o uso de versões estáveis, as [releases.](https://github.com/CPqD/tts-examples-c/releases)
 
 
 ## Compilação e execução no Windows
@@ -27,7 +27,7 @@ Baixe o conteúdo do repositório em seu computador e crie um *branch* local apo
 	# git clone https://github.com/CPqD/tts-examples-c.git
 	# git checkout -B v4.3-V1 tags/v4.3-V1
 
-Para facilitar a criação dos projetos, o programa CMake (https://cmake.org/) pode ser utilizado via interface gráfica.
+Para facilitar a criação dos projetos, o programa [CMake](https://cmake.org/) pode ser utilizado via interface gráfica.
 
 Os projetos serão criados de acordo com o tipo de compilador instalado na máquina. Os comandos aqui propostos estão sendo guiados pelo compilador Visual Studio.
 
