@@ -35,20 +35,23 @@ static void main_usage()
 static std::string main_loadInputFile(
 	const std::string &fileName )
 {
+	string text;
 	ifstream input(fileName.c_str());
 	if (!input.good())
 	{
-		std::cerr << "Error opening input file '" << fileName << "'" << std::endl;
-		exit(1);
+		std::cerr << "Error opening input file '" << fileName << "'. Using default text." << std::endl;
+		text = "meu teste";
 	}
-
-	string line, text;
-	while (getline(input, line) )
+	else
 	{
-		text += line;
-		text += "\n";
+		string line;
+		while (getline(input, line))
+		{
+			text += line;
+			text += "\n";
+		}
+		input.close();
 	}
-	input.close();
 
 	return text;
 }
