@@ -791,8 +791,8 @@ typedef TTS_RETURN (* TTS_SETFLOATPARAMETER)(TTS_HANDLE handle, uint8_t pid, flo
 typedef TTS_RETURN (* TTS_GETFLOATPARAMETER)(TTS_HANDLE handle, uint8_t pid, float *value);
 typedef TTS_RETURN (* TTS_SETSTRINGPARAMETER)(TTS_HANDLE handle, uint8_t pid, const char* value);
 typedef TTS_RETURN (* TTS_GETSTRINGPARAMETER)(TTS_HANDLE handle, uint8_t pid, char *value, uint32_t length);
-typedef TTS_RETURN (* TTS_LOADPLUGIN)(const char *fileName);
-typedef TTS_RETURN (* TTS_UNLOADPLUGIN)(const char *fileName);
+typedef TTS_RETURN (* TTS_LOADPLUGIN)(const char *pluginName);
+typedef TTS_RETURN (* TTS_UNLOADPLUGIN)(const char *pluginName);
 typedef TTS_RETURN (* TTS_ENUMERATEVOICE)(const struct TTS_VOICE_INFO **voices, size_t *count);
 typedef TTS_RETURN (* TTS_ENUMERATEENCODER)(const struct TTS_ENCODER_INFO **encoders, size_t *count);
 
@@ -1208,13 +1208,12 @@ LIBCPQDTTS_EXPORTED TTS_RETURN TTS_GetStringParameterLength(
 /**
  * @brief Dynamically loads the plugin in the given shared library.
  *
- * @param [in] fileName Path to the shared library.
- * @param [in] name Name to be assigned to the plugin.
+ * @param [in] pluginName Name to be assigned to the plugin.
  * @return @ref TTS_OK or an @ref GRP_ERRORS "error code" otherwise.
  * @ingroup GRP_API
  */
 LIBCPQDTTS_EXPORTED TTS_RETURN TTS_LoadPlugin(
-    const char *fileName );
+    const char *pluginName );
 
 
 /**
@@ -1222,12 +1221,12 @@ LIBCPQDTTS_EXPORTED TTS_RETURN TTS_LoadPlugin(
  *
  * Built-in plugins can not be unloaded.
  *
- * @param [in] name Name of the plugin.
+ * @param [in] pluginName Name of the plugin.
  * @return @ref TTS_OK or an @ref GRP_ERRORS "error code" otherwise.
  * @ingroup GRP_API
  */
 LIBCPQDTTS_EXPORTED TTS_RETURN TTS_UnloadPlugin(
-    const char *name );
+    const char *pluginName );
 
 
 /**
