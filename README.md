@@ -35,7 +35,7 @@ Para criar os projetos:
 1. Acesse o diretório source do repositório baixado;
 2. Abra o programa CMake;
 3. Insira as opções:
-    - **Source code**: caminho da pasta source que possui o arquivo CMakeLists.txt
+    - **Source code**: caminho da pasta ``source`` que possui o arquivo CMakeLists.txt
     - **Build the binaries**: caminho onde serão gerados os arquivos de build. Normalmente acrescentamos o diretório build no caminho do source code. Exemplo:/source/build
 4. Clique em **Configure** e escolha o compilador Visual Studio versão 64 bits;
 5. Clique em **Generate** para que as configurações sejam setadas no compilador;
@@ -78,7 +78,7 @@ Para criar os projetos:
 2. Crie a pasta build;
 3. Use o comando abaixo para criar e configurar os projetos:
        
-       # cmake -Bbuild -H.
+       # cmake -Bbuild -H./source/
 
 4. Os projetos gerados estarão disponíveis na pasta build.
 

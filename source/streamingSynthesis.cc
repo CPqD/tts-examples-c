@@ -92,8 +92,8 @@ static uint8_t main_audioCallback(
 	const TTS_STREAM_EVENT *event,
 	void *data)
 {
-	UNREFERENCED_PARAMETER(handle);
-	UNREFERENCED_PARAMETER(data);
+	(void) handle;
+	(void) data;
 
 	if (event->Audio != NULL)
 	{

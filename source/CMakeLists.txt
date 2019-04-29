@@ -4,6 +4,10 @@ project(examples)
 cmake_minimum_required(VERSION 2.8)
 
 
+if (UNIX)
+	set(TTS_LINK_LIBRARIES "-lpthread -l${CMAKE_DL_LIBS}" )
+endif()
+
 
 ################################################################################
 ## simpleSynthesis                                                            ##
