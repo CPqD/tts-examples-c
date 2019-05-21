@@ -39,8 +39,8 @@ static std::string main_loadInputFile(
 	ifstream input(fileName.c_str());
 	if (!input.good())
 	{
-		std::cerr << "Error opening input file '" << fileName << "'. Using default text." << std::endl;
-		text = "meu teste";
+		std::cout << "No '" << fileName << "' present, using default text." << std::endl;
+		text = "Este é um texto de exemplo do CPqD Texto Fala.";
 	}
 	else
 	{
@@ -108,7 +108,7 @@ int main( int argc, char **argv )
 	result = tts_loadLibrary(libraryFile.c_str());
 	if (result != TTS_OK)
 	{
-		std::cerr << "Can not load library '" << libraryFile << "'" << std::endl;
+		std::cerr << "Unable to load library '" << libraryFile << "'" << std::endl;
 		return 1;
 	}
 
@@ -146,7 +146,7 @@ int main( int argc, char **argv )
 			if (result != TTS_OK)
 				main_printError("TTS_SaveAudio");
 			else
-				std::cout << "Created the file '" << outputFile << "' with the synthesized audio" << std::endl;
+				std::cout << "Created file '" << outputFile << "' with synthesized speech" << std::endl;
 		}
 	}
 	else
