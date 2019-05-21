@@ -41,8 +41,8 @@ static std::string main_loadInputFile(
 	ifstream input(fileName.c_str());
 	if (!input.good())
 	{
-		std::cerr << "Error opening input file '" << fileName << "'. Using default text." << std::endl;
-		text = "meu teste";
+		std::cout << "No '" << fileName << "' present, using default text." << std::endl;
+		text = "Este é um texto de exemplo do CPqD Texto Fala.";
 	}
 	else
 	{
