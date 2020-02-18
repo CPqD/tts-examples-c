@@ -22,10 +22,10 @@ Como boa prática, deve-se fazer o uso de versões estáveis, as [releases.](htt
 
 ## Compilação e execução no Windows
 
-Baixe o conteúdo do repositório em seu computador e crie um *branch* local apontando para a *tag* **v4.3-V1**:
+Baixe o conteúdo do repositório em seu computador e crie um *branch* local apontando para a *tag* **v4.4-V1**:
 
 	# git clone https://github.com/CPqD/tts-examples-c.git
-	# git checkout -B v4.3-V1 tags/v4.3-V1
+	# git checkout -B v4.4-V1 tags/v4.4-V1
 
 Para facilitar a criação dos projetos, o programa [CMake](https://cmake.org/) pode ser utilizado via interface gráfica.
 
@@ -52,7 +52,7 @@ Para compilar o projeto criado:
 
 Com os exectutáveis ``example_tts.exe`` e ``example_tts_streaming.exe`` gerados, você pode testar o funcionamento da biblioteca do **CPqD Texto Fala** da seguinte maneira:
 1. Rode o programa exemplo informando o caminho da instalação da biblioteca do CPqD Texto Fala:
-       
+
        # example_tts.exe <caminho da instalação da biblioteca do CPqD Texto Fala>
        # example_tts_streaming.exe <caminho da instalação da biblioteca do CPqD Texto Fala>
 2. Ambos os exemplos irão gerar um arquivo example.wav contendo o texto sintetizado;
@@ -64,10 +64,10 @@ Maiores dúvidas, veja a documentação de [instalação.](https://speechweb.cpq
 
 ## Compilação e execução no Linux
 
-Baixe o conteúdo do repositório em seu computador e crie um *branch* local apontando para a *tag* **v4.3-V1**:
+Baixe o conteúdo do repositório em seu computador e crie um *branch* local apontando para a *tag* **v4.4-V1**:
 
 	# git clone https://github.com/CPqD/tts-examples-c.git
-	# git checkout -B v4.3-V1 tags/v4.3-V1
+	# git checkout -B v4.4-V1 tags/v4.4-V1
 
 Para facilitar a criação dos projetos, o programa [CMake](https://cmake.org/) pode ser utilizado via linha de comando.
 
@@ -77,7 +77,7 @@ Para criar os projetos:
 1. Acesse o diretório source do repositório baixado;
 2. Crie a pasta build;
 3. Use o comando abaixo para criar e configurar os projetos:
-       
+
        # cmake -Bbuild -H./source/
 
 4. Os projetos gerados estarão disponíveis na pasta build.
@@ -88,15 +88,15 @@ Para compilar o projeto criado:
 1. Acesse a pasta build;
 2. Rode os comandos:
 
-       # make example_tts 
+       # make example_tts
        # make example_tts_streaming
- 
+
 3. Os executáveis (**example_tts** e **example_tts_streaming**) foram gerados na pasta build.
 
 
 Com os exectutáveis ``example_tts`` e ``example_tts_streaming`` gerados, você pode testar o funcionamento da biblioteca do **CPqD Texto Fala** da seguinte maneira:
 1. Rode o programa exemplo informando o caminho da instalação da biblioteca do CPqD Texto Fala:
-       
+
        # ./example_tts <caminho da instalação da biblioteca do CPqD Texto Fala>
        # ./example_tts_streaming <caminho da instalação da biblioteca do CPqD Texto Fala>
 2. Ambos os exemplos irão gerar um arquivo example.wav contendo o texto sintetizado;

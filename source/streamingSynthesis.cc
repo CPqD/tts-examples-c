@@ -126,7 +126,7 @@ int main( int argc, char **argv )
 	result = tts_loadLibrary(libraryFile.c_str());
 	if (result != TTS_OK)
 	{
-		std::cerr << "Can not load library '" << libraryFile << "'" << std::endl;
+		std::cerr << "Unable to load library '" << libraryFile << "'" << std::endl;
 		return 1;
 	}
 
