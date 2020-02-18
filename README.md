@@ -1,24 +1,8 @@
 # CPqD Texto Fala &ndash; Exemplos em C  [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-**VERSÃO DE DESENVOLVIMENTO**
-
 O **CPqD Texto Fala** é um *framework* que permite converter texto genérico, como notícias ou diálogos, em fala. É possível integrar o CPqD Texto Fala nas mais variadas aplicações, desde aplicativos móveis até sistemas de diálogo para telefonia.
 
-Este repositório possui um arquivo CMake contendo dois projetos de programa exemplo, na linguagem C, que demonstram como utilizar a biblioteca dinâmica (Windows ou GNU/Linux) do **CPqD Texto Fala**. Você pode utilizar esses programas como ponto de partida para o desenvolvimento de suas aplicações.
-
-Note que os programas de exemplo aqui apresentados não tem o objetivo de exercitar todos os recursos oferecidos pelo produto.
-
-Os seguintes projetos estão disponíveis:
-
-example_tts: executa uma síntese síncrona utilizando a instalação do CPqD Texto Fala e o texto de entrada especificados. Uma síntese síncrona é aquela cujo o áudio é disponibilizado apenas no final do processamento (i.e. depois da chamada da função **TTS_TextToSpeech()**).
-
-example_tts_streaming: executa uam síntese via streaming utilizando uma instalação do CPqD Texto Fala e o texto de entrada especificados. Uma síntese via streaming entrega o áudio na medida em que a fala é sintetizada, acelerando o tempo de resposta da aplicação. Essa funcionalidade é implementada pela função **TTS_TextToSpeechStream()**.
-
-
-## Releases
-
-Como boa prática, deve-se fazer o uso de versões estáveis, as [releases.](https://github.com/CPqD/tts-examples-c/releases)
-
+Este repositório contém um arquivo ``CMakeLists.txt`` contendo dois projetos de programa exemplo, na linguagem C. O projeto ``example_tts`` contém o código fonte de uma síntese síncrona utilizando a instalação do CPqD Texto Fala e o texto de entrada especificados. Já o projeto ``example_tts_streaming`` contém o código fonte de uma síntese via streaming utilizando uma instalação do CPqD Texto Fala e o texto de entrada especificados
 
 ## Compilação e execução no Windows
 
