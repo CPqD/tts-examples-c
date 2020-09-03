@@ -54,6 +54,7 @@ extern TTS_SETFLOATPARAMETER   TTS_SetFloatParameter;
 extern TTS_GETFLOATPARAMETER   TTS_GetFloatParameter;
 extern TTS_SETSTRINGPARAMETER  TTS_SetStringParameter;
 extern TTS_GETSTRINGPARAMETER  TTS_GetStringParameter;
+extern TTS_GETSTRINGPARAMETERLENGTH TTS_GetStringParameterLength;
 extern TTS_LOADPLUGIN          TTS_LoadPlugin;
 extern TTS_UNLOADPLUGIN        TTS_UnloadPlugin;
 extern TTS_ENUMERATEVOICE      TTS_EnumerateVoices;

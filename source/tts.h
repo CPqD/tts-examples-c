@@ -1,7 +1,7 @@
 /*
- * CPqD Texto Fala 4.3.0
+ * CPqD Texto Fala 4.5.0
  *
- * Online documentation: https://speechweb.cpqd.com.br/tts/docs/4.3/
+ * Online documentation: https://speechweb.cpqd.com.br/tts/docs/4.5/
  */
 
 #ifndef CPQD_TTS_PUBLIC_TTS_H
@@ -14,9 +14,9 @@
 
 
 #define TTS_MAJOR_VERSION     4
-#define TTS_MINOR_VERSION     3
+#define TTS_MINOR_VERSION     5
 #define TTS_PATCH_VERSION     0
-#define TTS_PRODUCT_NAME      "CPqD Texto Fala 4.3.0"
+#define TTS_PRODUCT_NAME      "CPqD Texto Fala 4.5.0"
 
 
 /**
@@ -791,6 +791,7 @@ typedef TTS_RETURN (* TTS_SETFLOATPARAMETER)(TTS_HANDLE handle, uint8_t pid, flo
 typedef TTS_RETURN (* TTS_GETFLOATPARAMETER)(TTS_HANDLE handle, uint8_t pid, float *value);
 typedef TTS_RETURN (* TTS_SETSTRINGPARAMETER)(TTS_HANDLE handle, uint8_t pid, const char* value);
 typedef TTS_RETURN (* TTS_GETSTRINGPARAMETER)(TTS_HANDLE handle, uint8_t pid, char *value, uint32_t length);
+typedef TTS_RETURN (*TTS_GETSTRINGPARAMETERLENGTH)(TTS_HANDLE handle, uint8_t pid, uint32_t *length);
 typedef TTS_RETURN (* TTS_LOADPLUGIN)(const char *pluginName);
 typedef TTS_RETURN (* TTS_UNLOADPLUGIN)(const char *pluginName);
 typedef TTS_RETURN (* TTS_ENUMERATEVOICE)(const struct TTS_VOICE_INFO **voices, size_t *count);

@@ -22,10 +22,10 @@ Como boa prática, deve-se fazer o uso de versões estáveis, as [releases.](htt
 
 ## Compilação e execução no Windows
 
-Baixe o conteúdo do repositório em seu computador e crie um *branch* local apontando para a *tag* **v4.4-V1**:
+Baixe o conteúdo do repositório em seu computador e crie um *branch* local apontando para a *tag* **v4.5-V1**:
 
 	# git clone https://github.com/CPqD/tts-examples-c.git
-	# git checkout -B v4.4-V1 tags/v4.4-V1
+	# git checkout -B v4.5-V1 tags/v4.5-V1
 
 Para facilitar a criação dos projetos, o programa [CMake](https://cmake.org/) pode ser utilizado via interface gráfica.
 
@@ -64,10 +64,10 @@ Maiores dúvidas, veja a documentação de [instalação.](https://speechweb.cpq
 
 ## Compilação e execução no Linux
 
-Baixe o conteúdo do repositório em seu computador e crie um *branch* local apontando para a *tag* **v4.4-V1**:
+Baixe o conteúdo do repositório em seu computador e crie um *branch* local apontando para a *tag* **v4.5-V1**:
 
 	# git clone https://github.com/CPqD/tts-examples-c.git
-	# git checkout -B v4.4-V1 tags/v4.4-V1
+	# git checkout -B v4.5-V1 tags/v4.5-V1
 
 Para facilitar a criação dos projetos, o programa [CMake](https://cmake.org/) pode ser utilizado via linha de comando.
 
