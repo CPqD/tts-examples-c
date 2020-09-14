@@ -87,7 +87,7 @@ Com os exectutáveis ``example_tts`` e ``example_tts_streaming`` gerados, você 
 2. Ambos os exemplos irão gerar um arquivo example.wav contendo o texto sintetizado;
 3. Opcionalmente o texto a ser sintetizado pode ser informado via arquivo (example.txt). Caso o arquivo não seja encontrado, um texto padrão será sintetizado.
 
-Maiores dúvidas, veja a documentação de [instalação.](https://speechweb.cpqd.com.br/tts/docs/latest/InstallationGuide/Install.html)
+Maiores dúvidas, veja a documentação de [instalação.](https://speechweb.cpqd.com.br/tts/docs/latest/InstallationGuide/Installation/Install.html)
 
 
 
