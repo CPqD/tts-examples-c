@@ -1,23 +1,16 @@
 # CPqD Texto Fala &ndash; Exemplos em C  [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-**VERSÃO DE DESENVOLVIMENTO**
-
 O [CPQD Texto Fala](https://www.cpqd.com.br/cpqd-texto-fala/) é um *framework* que permite converter texto genérico, como notícias ou diálogos, em fala natural. É possível integrar o CPQD Texto Fala nas mais variadas aplicações, desde aplicativos móveis até sistemas de diálogo para telefonia.
 
 Este repositório possui dois programas de exemplo implementados em C++. O programa ``example_tts`` demonstra o uso do básico do CPQD Texto Fala, utilizando síntese síncrona (bloqueia a *thread* até a síntese ser concluída). Já o programa ``example_tts_streaming`` demonstra o uso de síntese via streaming, que possibilita a entrega do áudio na medida em que a fala é sintetizada.
 
 
-## Releases
-
-Sempre prefira utilizar uma [versão estável](https://github.com/CPqD/tts-examples-c/releases) dos programas de exemplo, ao invés do código contido no *branch* `master`.
-
-
 ## Compilação e execução no Windows
 
-Baixe o conteúdo do repositório em seu computador e crie um *branch* local apontando para a *tag* **v4.5-V1**:
+Baixe o conteúdo do repositório em seu computador e crie um *branch* local apontando para a *tag* **v4.6-V1**:
 
 	# git clone https://github.com/CPqD/tts-examples-c.git
-	# git checkout -B v4.5-V1 tags/v4.5-V1
+	# git checkout -B v4.6-V1 tags/v4.6-V1
 
 Para facilitar a criação dos projetos, o programa [CMake](https://cmake.org/) pode ser utilizado via interface gráfica.
 
@@ -56,10 +49,10 @@ Maiores dúvidas, veja a documentação de [instalação.](https://speechweb.cpq
 
 ## Compilação e execução no Linux
 
-Baixe o conteúdo do repositório em seu computador e crie um *branch* local apontando para a *tag* **v4.5-V1**:
+Baixe o conteúdo do repositório em seu computador e crie um *branch* local apontando para a *tag* **v4.6-V1**:
 
 	# git clone https://github.com/CPqD/tts-examples-c.git
-	# git checkout -B v4.5-V1 tags/v4.5-V1
+	# git checkout -B v4.6-V1 tags/v4.6-V1
 
 Para facilitar a criação dos projetos, o programa [CMake](https://cmake.org/) pode ser utilizado via linha de comando.
 
