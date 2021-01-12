@@ -1,7 +1,7 @@
 /*
- * CPqD Texto Fala 4.3.0
+ * CPqD Texto Fala 4.6.1
  *
- * Online documentation: https://speechweb.cpqd.com.br/tts/docs/4.3/
+ * Online documentation: https://speechweb.cpqd.com.br/tts/docs/4.6/
  */
 
 #ifndef CPQD_TTS_PUBLIC_TTS_H
@@ -14,9 +14,9 @@
 
 
 #define TTS_MAJOR_VERSION     4
-#define TTS_MINOR_VERSION     3
-#define TTS_PATCH_VERSION     0
-#define TTS_PRODUCT_NAME      "CPqD Texto Fala 4.3.0"
+#define TTS_MINOR_VERSION     6
+#define TTS_PATCH_VERSION     1
+#define TTS_PRODUCT_NAME      "CPqD Texto Fala 4.6.1"
 
 
 /**
@@ -121,6 +121,13 @@ typedef uint32_t TTS_RETURN;
  * This parameter expects an @b string value.
  */
 #define TTS_PARAM_LICENSE_ID         (0x10)
+
+/**
+ * @brief Instance identifier.
+ *
+ * This parameter expects an @b string value.
+ */
+#define TTS_PARAM_LICENSE_TAG        (0x11)
 
 
 /**
@@ -509,6 +516,37 @@ typedef struct TTS_VERSION_INFO
  */
 #define TTS_CAP_SUPPORT_API_UNLOADPLUGIN        (0x0800)
 
+/**
+ * @brief The function TTS_RegisterTemplate() is available.
+ */
+#define TTS_CAP_SUPPORT_API_REGISTERTEMPLATE    (0x1000)
+
+/**
+ * @brief The function TTS_LoadTemplate() is available.
+ */
+#define TTS_CAP_SUPPORT_API_LOADTEMPLATE        (0x2000)
+
+/**
+ * @brief The function TTS_UnloadTemplate() is available.
+ */
+#define TTS_CAP_SUPPORT_API_UNLOADTEMPLATE        (0x4000)
+
+/**
+ * @brief The function TTS_RegisterInterpretation() is available.
+ */
+#define TTS_CAP_SUPPORT_API_REGISTERINTERPRETATION (0x8000)
+
+/**
+ * @brief The function TTS_ProcessMessage() is available.
+ */
+#define TTS_CAP_SUPPORT_API_PROCESSMESSAGE      (0x1010)
+
+/**
+ * @brief The function TTS_ValidateSSML() is available.
+ */
+#define TTS_CAP_SUPPORT_API_VALIDATESSML        (0x1020)
+
+
 
 #define TTS_STATE_ONLINE                (0x01)
 
@@ -517,6 +555,25 @@ typedef struct TTS_VERSION_INFO
 #define TTS_STATE_BLOCKED               (0x03)
 
 #define TTS_STATE_UNKNOWN               (0xFF)
+
+
+
+//template message
+
+/**
+ * @brief Check if there are all templates of the message.
+ */
+#define TEMPLATE_MESSAGE_CHECK_ALL   (0x01)
+
+/**
+ * @brief Doesn't check for message templates.
+ */
+#define TEMPLATE_MESSAGE_DONT_CHECK  (0x02)
+
+/**
+ * @brief Check if there is only one template in the message.
+ */
+#define TEMPLATE_MESSAGE_FOUND_ONE   (0x03)
 
 
 /**
@@ -767,6 +824,18 @@ typedef struct TTS_PLUGIN_INFO
 } TTS_PLUGIN_INFO;
 
 
+typedef bool TTS_INTERPRET_OUTPUT_CALLBACK(
+	void* context,
+	const char *text );
+
+
+typedef void TTS_INTERPRET_CALLBACK(
+		void* context,
+		const char *input,
+		TTS_INTERPRET_OUTPUT_CALLBACK *callback,
+		void *data );
+
+
 #ifdef TTS_LOADABLE_LIBRARY
 
 typedef TTS_RETURN (* TTS_INITIALIZE)( const char *productPath, const char *logPath );
@@ -791,10 +860,17 @@ typedef TTS_RETURN (* TTS_SETFLOATPARAMETER)(TTS_HANDLE handle, uint8_t pid, flo
 typedef TTS_RETURN (* TTS_GETFLOATPARAMETER)(TTS_HANDLE handle, uint8_t pid, float *value);
 typedef TTS_RETURN (* TTS_SETSTRINGPARAMETER)(TTS_HANDLE handle, uint8_t pid, const char* value);
 typedef TTS_RETURN (* TTS_GETSTRINGPARAMETER)(TTS_HANDLE handle, uint8_t pid, char *value, uint32_t length);
+typedef TTS_RETURN (*TTS_GETSTRINGPARAMETERLENGTH)(TTS_HANDLE handle, uint8_t pid, uint32_t *length);
 typedef TTS_RETURN (* TTS_LOADPLUGIN)(const char *pluginName);
 typedef TTS_RETURN (* TTS_UNLOADPLUGIN)(const char *pluginName);
 typedef TTS_RETURN (* TTS_ENUMERATEVOICE)(const struct TTS_VOICE_INFO **voices, size_t *count);
 typedef TTS_RETURN (* TTS_ENUMERATEENCODER)(const struct TTS_ENCODER_INFO **encoders, size_t *count);
+typedef TTS_RETURN (* TTS_REGISTERTEMPLATE) (const char *name,  const char *content);
+typedef TTS_RETURN (* TTS_LOADTEMPLATE) (const char *fileName);
+typedef TTS_RETURN (* TTS_UNLOADTEMPLATE) (const char *fileName);
+typedef TTS_RETURN (* TTS_REGISTERINTERPRETATION)(const char *name, TTS_INTERPRET_CALLBACK *callback, void *data, bool isNormalized);
+typedef TTS_RETURN (* TTS_PROCESSMESSAGE) (const char *message, int8_t flags, char **output);
+typedef TTS_RETURN (* TTS_VALIDATESSML) (const char *ssml);
 
 #else
 
@@ -1261,6 +1337,36 @@ LIBCPQDTTS_EXPORTED TTS_RETURN TTS_EnumerateEncoders(
     size_t *encoderCount );
 
 
+LIBCPQDTTS_EXPORTED TTS_RETURN TTS_RegisterTemplate(
+    const char *name,
+    const char *content );
+
+
+LIBCPQDTTS_EXPORTED TTS_RETURN TTS_LoadTemplate(
+    const char *fileName );
+
+LIBCPQDTTS_EXPORTED TTS_RETURN TTS_UnloadTemplate(
+    const char *fileName );
+
+
+LIBCPQDTTS_EXPORTED TTS_RETURN TTS_RegisterInterpretation(
+    const char *name,    // valor do 'interpret-as'
+    TTS_INTERPRET_CALLBACK *callback,
+    void *data,
+    bool isNormalized  );
+
+
+LIBCPQDTTS_EXPORTED TTS_RETURN TTS_ProcessMessage(
+    const char *message,
+    int8_t flags,
+    char **output );
+
+
+LIBCPQDTTS_EXPORTED TTS_RETURN TTS_ValidateSSML(
+    const char *ssml );
+
+
+
 #ifdef __cplusplus
 }
 #endif
@@ -1301,6 +1407,8 @@ LIBCPQDTTS_EXPORTED TTS_RETURN TTS_EnumerateEncoders(
 #define TTSERR_HARDKEY_EXCEPTION        (0x010B)
 #define TTSERR_SYNTHESIS                (0x010C)
 #define TTSERR_ALREADY_INITIALIZED      (0x010D)
+#define TTSERR_MALFORMED_TEMPLATE_SSML  (0x010E)
+#define TTSERR_MALFORMED_MESSAGE        (0x010F)
 
 
 #define TTSERR_FATAL_ERROR              (0x01F1) // TODO: remove this
