@@ -1,7 +1,7 @@
 /*
- * CPqD Texto Fala 4.6.1
+ * CPqD Texto Fala 4.7.4
  *
- * Online documentation: https://speechweb.cpqd.com.br/tts/docs/4.6/
+ * Online documentation: https://speechweb.cpqd.com.br/tts/docs/4.7/
  */
 
 #ifndef CPQD_TTS_PUBLIC_TTS_H
@@ -14,9 +14,9 @@
 
 
 #define TTS_MAJOR_VERSION     4
-#define TTS_MINOR_VERSION     6
-#define TTS_PATCH_VERSION     1
-#define TTS_PRODUCT_NAME      "CPqD Texto Fala 4.6.1"
+#define TTS_MINOR_VERSION     7
+#define TTS_PATCH_VERSION     4
+#define TTS_PRODUCT_NAME      "CPqD Texto Fala 4.7.4"
 
 
 /**
@@ -252,6 +252,11 @@ typedef struct TTS_VOICE_INFO
      * @c TTS_VOICE_FLAG_ prefixed macros in @ref GRP_VOICE_INFO.
      */
     uint8_t Flags;
+    
+    /**
+     * Language of the voice.
+     */
+    char Language[20];
 
 } TTS_VOICE_INFO;
 
