@@ -256,7 +256,7 @@ typedef struct TTS_VOICE_INFO
     /**
      * Language of the voice.
      */
-    char Language[20];
+    char Language[8];
 
 } TTS_VOICE_INFO;
 
