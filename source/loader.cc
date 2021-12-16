@@ -36,6 +36,12 @@ TTS_LOADPLUGIN          TTS_LoadPlugin;
 TTS_UNLOADPLUGIN        TTS_UnloadPlugin;
 TTS_ENUMERATEVOICE      TTS_EnumerateVoices;
 TTS_ENUMERATEENCODER    TTS_EnumerateEncoders;
+TTS_VALIDATESSML        TTS_ValidateSSML;
+TTS_PROCESSMESSAGE      TTS_ProcessMessage;
+TTS_REGISTERINTERPRETATION TTS_RegisterInterpretation;
+TTS_UNLOADTEMPLATE      TTS_UnloadTemplate;
+TTS_LOADTEMPLATE        TTS_LoadTemplate;
+TTS_LOADTEMPLATEFROMSTRING TTS_LoadTemplateFromString;
 
 
 TTS_RETURN tts_loadLibrary(
@@ -75,7 +81,12 @@ TTS_RETURN tts_loadLibrary(
     dynlib_symbol(library, "TTS_LoadPlugin", TTS_LoadPlugin, TTS_LOADPLUGIN);
     dynlib_symbol(library, "TTS_UnloadPlugin", TTS_UnloadPlugin, TTS_UNLOADPLUGIN);
     dynlib_symbol(library, "TTS_EnumerateVoices", TTS_EnumerateVoices, TTS_ENUMERATEVOICE);
-    dynlib_symbol(library, "TTS_EnumerateEncoders", TTS_EnumerateEncoders, TTS_ENUMERATEENCODER);
+    dynlib_symbol(library, "TTS_ValidateSSML", TTS_ValidateSSML, TTS_VALIDATESSML);
+    dynlib_symbol(library, "TTS_ProcessMessage", TTS_ProcessMessage, TTS_PROCESSMESSAGE);
+    dynlib_symbol(library, "TTS_RegisterInterpretation", TTS_RegisterInterpretation, TTS_REGISTERINTERPRETATION);
+    dynlib_symbol(library, "TTS_UnloadTemplate", TTS_UnloadTemplate, TTS_UNLOADTEMPLATE);
+    dynlib_symbol(library, "TTS_LoadTemplate", TTS_LoadTemplate, TTS_LOADTEMPLATE);
+    dynlib_symbol(library, "TTS_LoadTemplateFromString", TTS_LoadTemplateFromString, TTS_LOADTEMPLATEFROMSTRING);
 
 ESCAPE:
     if (result != 0)

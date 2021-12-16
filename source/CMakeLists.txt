@@ -53,3 +53,24 @@ set_target_properties(example_tts_streaming PROPERTIES
     ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}"
     LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}"
     RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}" )
+
+
+################################################################################
+## template                                                                  ##
+################################################################################
+
+file(GLOB EXAMPLE_TTS_TEMPLATE_SOURCES "template.cc"
+                                       "loader.cc")
+ 
+file(GLOB EXAMPLE_TTS_TEMPLATE_HEADERS  "loader.hh"
+                                         "tts.h")
+source_group("Header Files" FILES ${EXAMPLE_TTS_TEMPLATE_HEADERS})
+
+
+add_executable(example_tts_template ${EXAMPLE_TTS_TEMPLATE_SOURCES} ${EXAMPLE_TTS_TEMPLATE_HEADERS})
+target_link_libraries(example_tts_template ${TTS_LINK_LIBRARIES})
+set_target_properties(example_tts_template PROPERTIES
+    OUTPUT_NAME "example_tts_template"
+    ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}"
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}"
+    RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}" )

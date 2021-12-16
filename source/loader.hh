@@ -58,6 +58,12 @@ extern TTS_LOADPLUGIN          TTS_LoadPlugin;
 extern TTS_UNLOADPLUGIN        TTS_UnloadPlugin;
 extern TTS_ENUMERATEVOICE      TTS_EnumerateVoices;
 extern TTS_ENUMERATEENCODER    TTS_EnumerateEncoders;
+extern TTS_VALIDATESSML        TTS_ValidateSSML;
+extern TTS_PROCESSMESSAGE      TTS_ProcessMessage;
+extern TTS_REGISTERINTERPRETATION TTS_RegisterInterpretation;
+extern TTS_UNLOADTEMPLATE      TTS_UnloadTemplate;
+extern TTS_LOADTEMPLATE        TTS_LoadTemplate;
+extern TTS_LOADTEMPLATEFROMSTRING TTS_LoadTemplateFromString;
 
 
 #ifdef __cplusplus

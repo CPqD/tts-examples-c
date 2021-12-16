@@ -1,7 +1,7 @@
 /*
- * CPqD Texto Fala 4.7.4
+ * CPqD Texto Fala 4.8.0
  *
- * Online documentation: https://speechweb.cpqd.com.br/tts/docs/4.7/
+ * Online documentation: https://speechweb.cpqd.com.br/tts/docs/4.8/
  */
 
 #ifndef CPQD_TTS_PUBLIC_TTS_H
@@ -14,9 +14,9 @@
 
 
 #define TTS_MAJOR_VERSION     4
-#define TTS_MINOR_VERSION     7
-#define TTS_PATCH_VERSION     4
-#define TTS_PRODUCT_NAME      "CPqD Texto Fala 4.7.4"
+#define TTS_MINOR_VERSION     8
+#define TTS_PATCH_VERSION     0
+#define TTS_PRODUCT_NAME      "CPqD Texto Fala 4.8.0"
 
 
 /**
@@ -870,12 +870,12 @@ typedef TTS_RETURN (* TTS_LOADPLUGIN)(const char *pluginName);
 typedef TTS_RETURN (* TTS_UNLOADPLUGIN)(const char *pluginName);
 typedef TTS_RETURN (* TTS_ENUMERATEVOICE)(const struct TTS_VOICE_INFO **voices, size_t *count);
 typedef TTS_RETURN (* TTS_ENUMERATEENCODER)(const struct TTS_ENCODER_INFO **encoders, size_t *count);
-typedef TTS_RETURN (* TTS_REGISTERTEMPLATE) (const char *name,  const char *content);
-typedef TTS_RETURN (* TTS_LOADTEMPLATE) (const char *fileName);
-typedef TTS_RETURN (* TTS_UNLOADTEMPLATE) (const char *fileName);
-typedef TTS_RETURN (* TTS_REGISTERINTERPRETATION)(const char *name, TTS_INTERPRET_CALLBACK *callback, void *data, bool isNormalized);
-typedef TTS_RETURN (* TTS_PROCESSMESSAGE) (const char *message, int8_t flags, char **output);
-typedef TTS_RETURN (* TTS_VALIDATESSML) (const char *ssml);
+typedef TTS_RETURN(*TTS_LOADTEMPLATEFROMSTRING) (const char* name, const char* content);
+typedef TTS_RETURN(*TTS_LOADTEMPLATE) (const char* fileName);
+typedef TTS_RETURN(*TTS_UNLOADTEMPLATE) (const char* fileName);
+typedef TTS_RETURN(*TTS_REGISTERINTERPRETATION)(const char* name, TTS_INTERPRET_CALLBACK* callback, void* data, bool isNormalized);
+typedef TTS_RETURN(*TTS_PROCESSMESSAGE) (const char* message, int8_t flags, char** output);
+typedef TTS_RETURN(*TTS_VALIDATESSML) (const char* ssml);
 
 #else
 
@@ -1342,7 +1342,7 @@ LIBCPQDTTS_EXPORTED TTS_RETURN TTS_EnumerateEncoders(
     size_t *encoderCount );
 
 
-LIBCPQDTTS_EXPORTED TTS_RETURN TTS_RegisterTemplate(
+LIBCPQDTTS_EXPORTED TTS_RETURN TTS_LoadTemplateFromString(
     const char *name,
     const char *content );
 
