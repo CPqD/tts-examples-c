@@ -17,7 +17,7 @@ Sempre prefira utilizar uma [versão estável](https://github.com/CPqD/tts-examp
 Baixe o conteúdo do repositório em seu computador e crie um *branch* local apontando para a *tag* **v4.7-V1**:
 
 	# git clone https://github.com/CPqD/tts-examples-c.git
-	# git checkout -B v4.8-V1 tags/v4.8-V1
+	# git checkout -B v4.10-V1 tags/v4.10-V1
 
 Para facilitar a criação dos projetos, o programa [CMake](https://cmake.org/) pode ser utilizado via interface gráfica.
 
@@ -59,10 +59,10 @@ Maiores dúvidas, veja a documentação de [instalação.](https://speechweb.cpq
 
 ## Compilação e execução no Linux
 
-Baixe o conteúdo do repositório em seu computador e crie um *branch* local apontando para a *tag* **v4.7-V1**:
+Baixe o conteúdo do repositório em seu computador e crie um *branch* local apontando para a *tag* **v4.10-V1**:
 
 	# git clone https://github.com/CPqD/tts-examples-c.git
-	# git checkout -B v4.8-V1 tags/v4.8-V1
+	# git checkout -B v4.10-V1 tags/v4.10-V1
 
 Para facilitar a criação dos projetos, o programa [CMake](https://cmake.org/) pode ser utilizado via linha de comando.
 
