@@ -33,7 +33,6 @@ Para criar os projetos:
 5. Clique em **Generate** para que as configurações sejam setadas no compilador;
 6. A solution ``examples.sln`` e os projetos ``example_tts``, ``example_tts_streaming`` e ``example_tts_template`` estarão disponíveis na pasta build.
 
-
 Para compilar o projeto criado:
 1. Abra solution ``examples.sln``;
 2. Altere a configuração para Release;
@@ -41,7 +40,6 @@ Para compilar o projeto criado:
 4. Clique com o botão direito no projeto ``example_tts_streaming`` na opção **Build**;
 4. Clique com o botão direito no projeto ``example_tts_template`` na opção **Build**;
 5. Os executáveis (**example_tts.exe**, **example_tts_streaming.exe** e **example_tts_template**) foram gerados na pasta Release.
-
 
 Com os exectutáveis ``example_tts.exe``, ``example_tts_streaming.exe`` e ``example_tts_template gerados``, você pode testar o funcionamento da biblioteca do **CPQD Texto Fala** da seguinte maneira:
 1. Rode o programa exemplo informando o caminho da instalação da biblioteca do CPQD Texto Fala:
@@ -54,8 +52,6 @@ O exemplo example_tts_template.exe irá gerar um arquivo contendo o texto proces
 3. Opcionalmente o texto a ser sintetizado pode ser informado via arquivo (example.txt). Caso o arquivo não seja encontrado, um texto padrão será sintetizado.
 
 Maiores dúvidas, veja a documentação de [instalação.](https://speechweb.cpqd.com.br/tts/docs/latest/InstallationGuide/Install.html)
-
-
 
 ## Compilação e execução no Linux
 
@@ -76,8 +72,6 @@ Para criar os projetos:
        # cmake -Bbuild -H./source/
 
 4. Os projetos gerados estarão disponíveis na pasta build.
-
-
 
 Para compilar o projeto criado:
 1. Acesse a pasta build;
@@ -101,7 +95,6 @@ O exemplo example_tts_template.exe irá gerar um arquivo contendo o texto proces
 3. Opcionalmente o texto a ser sintetizado pode ser informado via arquivo (example.txt). Caso o arquivo não seja encontrado, um texto padrão será sintetizado.
 
 Maiores dúvidas, veja a documentação de [instalação.](https://speechweb.cpqd.com.br/tts/docs/latest/InstallationGuide/Installation/Install.html)
-
 
 
 ## Documentação
