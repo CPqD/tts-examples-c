@@ -69,22 +69,20 @@ Para criar os projetos:
 2. Crie a pasta build;
 3. Use o comando abaixo para criar e configurar os projetos:
 
-       # cmake -Bbuild -H./source/
+       # cmake -Bbuild
 
 4. Os projetos gerados estarão disponíveis na pasta build.
 
 Para compilar o projeto criado:
 1. Acesse a pasta build;
-2. Rode os comandos:
+2. Execute o comando abaixo para compilar os programas de exemplo:
 
-       # make example_tts
-       # make example_tts_streaming
-       # make example_tts_template
+       # make
 
-3. Os executáveis (**example_tts**, **example_tts_streaming** e **example_tts_template**) foram gerados na pasta build.
+3. Os executáveis (``example_tts``, ``example_tts_streaming`` e ``example_tts_template``) estarão na pasta ``build``.
 
 
-Com os exectutáveis ``example_tts``, ``example_tts_streaming`` e ``example_tts_template`` gerados, você pode testar o funcionamento da biblioteca do **CPqD Texto Fala** da seguinte maneira:
+Com os programas de exemplo compilados, você poderá testar o funcionamento da biblioteca do **CPqD Texto Fala** da seguinte maneira:
 1. Rode o programa exemplo informando o caminho da instalação da biblioteca do CPqD Texto Fala:
 
        # ./example_tts <caminho da instalação do CPqD Texto Fala>

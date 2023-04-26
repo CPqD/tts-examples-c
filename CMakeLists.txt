@@ -10,8 +10,8 @@ endif()
 ## simpleSynthesis                                                            ##
 ################################################################################
 
-file(GLOB EXAMPLE_TTS_SOURCES "simpleSynthesis.cc" "loader.cc")
- file(GLOB EXAMPLE_TTS_HEADERS  "loader.hh" "tts.h")
+file(GLOB EXAMPLE_TTS_SOURCES "source/simpleSynthesis.cc" "source/loader.cc")
+ file(GLOB EXAMPLE_TTS_HEADERS  "source/loader.hh" "source/tts.h")
 source_group("Header Files" FILES ${EXAMPLE_TTS_HEADERS})
 
 
@@ -25,8 +25,8 @@ set_target_properties(example_tts PROPERTIES
 ## streamingSynthesis                                                         ##
 ################################################################################
 
-file(GLOB EXAMPLE_TTS_STREAM_SOURCES "streamingSynthesis.cc" "loader.cc")
-file(GLOB EXAMPLE_STREAM_TTS_HEADERS  "loader.hh" "tts.h")
+file(GLOB EXAMPLE_TTS_STREAM_SOURCES "source/streamingSynthesis.cc" "source/loader.cc")
+file(GLOB EXAMPLE_STREAM_TTS_HEADERS  "source/loader.hh" "source/tts.h")
 source_group("Header Files" FILES ${EXAMPLE_STREAM_TTS_HEADERS})
 
 add_executable(example_tts_streaming ${EXAMPLE_TTS_STREAM_SOURCES} ${EXAMPLE_STREAM_TTS_HEADERS})
@@ -40,8 +40,8 @@ set_target_properties(example_tts_streaming PROPERTIES
 ## template                                                                  ##
 ################################################################################
 
-file(GLOB EXAMPLE_TTS_TEMPLATE_SOURCES "template.cc" "loader.cc")
-file(GLOB EXAMPLE_TTS_TEMPLATE_HEADERS  "loader.hh" "tts.h")
+file(GLOB EXAMPLE_TTS_TEMPLATE_SOURCES "source/template.cc" "source/loader.cc")
+file(GLOB EXAMPLE_TTS_TEMPLATE_HEADERS  "source/loader.hh" "source/tts.h")
 source_group("Header Files" FILES ${EXAMPLE_TTS_TEMPLATE_HEADERS})
 
 add_executable(example_tts_template ${EXAMPLE_TTS_TEMPLATE_SOURCES} ${EXAMPLE_TTS_TEMPLATE_HEADERS})

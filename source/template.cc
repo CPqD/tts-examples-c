@@ -86,6 +86,7 @@ string main_loadInputFile(
 
 static void userCallback( void* context, const char *input, TTS_INTERPRET_OUTPUT_CALLBACK *output, void *data )
 {
+	(void) data;
 	string out = input;
 	out += " esse texto";
     output(context, out.c_str());
